@@ -8,6 +8,10 @@ async function getData() {
     let newItem = document.createElement("li");
     newItem.textContent = `Title : ${postsjson[i].title}`;
     postList.append(newItem)
+    let link = document.createElement("a");
+    newItem.parentNode.replaceChild(link, newItem); 
+    link.appendChild(newItem);    
+    link.href=`post.html?id=${postsjson[i].id}`
 
     let newItem2 = document.createElement("li");
     newItem2.textContent = `Body: ${postsjson[i].body}`;
