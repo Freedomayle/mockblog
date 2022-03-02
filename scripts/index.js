@@ -5,11 +5,11 @@ async function getData() {
 
   for (let i = 0; i< postsjson.length; i++){
     let newItem = document.createElement("li");
-    newItem.textContent = postsjson[i].title;
+    newItem.textContent = `Title : ${postsjson[i].title}`;
     postList.append(newItem)
     let newItem2 = document.createElement("li");
-    newItem2.textContent = postsjson[i].body;
-    postList.append(newItem)
+    newItem2.textContent = `Body: ${postsjson[i].body}`;
+    postList.append(newItem2)
   }
 
   
