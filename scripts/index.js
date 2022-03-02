@@ -4,12 +4,14 @@ async function getData() {
   let postsjson = await posts.json();
 
   for (let i = 0; i< postsjson.length; i++){
+
     let newItem = document.createElement("li");
     newItem.textContent = `Title : ${postsjson[i].title}`;
     postList.append(newItem)
+
     let newItem2 = document.createElement("li");
     newItem2.textContent = `Body: ${postsjson[i].body}`;
-    postList.append(newItem2)
+    postList.append(newItem2);
   }
 
   
@@ -20,7 +22,12 @@ async function getData() {
   for (let i = 0; i< authorsjson.length; i++){
     let newItem = document.createElement("li");
     newItem.textContent = authorsjson[i].name;
-    authorList.append(newItem)
+    authorList.append(newItem);
+
+    let link = document.createElement("a");
+    newItem.parentNode.replaceChild(link, newItem); 
+    link.appendChild(newItem);    
+    link.href=`author.html?name=${authorsjson[i].name}`
   }
 }
 
