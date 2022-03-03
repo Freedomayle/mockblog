@@ -9,7 +9,7 @@ async function getData() {
     console.log(postID)
     let post = await fetch(`https://jsonplaceholder.typicode.com/posts/${postID}`);
     postJSON = await post.json();
-    postTitle.textContent = postJSON.title;
+    postTitle.textContent = `Title: ${postJSON.title}`;
     postContent.textContent = postJSON.body;
 
     let authorID = postJSON.userId;
